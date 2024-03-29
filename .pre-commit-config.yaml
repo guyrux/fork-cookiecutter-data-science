@@ -1,0 +1,56 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    # -   id: no-commit-to-branch
+    #     args: [--branch=main]
+    -   id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+        args: [--allow-multiple-documents, --unsafe]
+    -   id: check-toml
+    -   id: detect-private-key
+    -   id: check-added-large-files
+        args: [--maxkb=100000]
+        # exclude: |
+        #     (?x)(
+        #         ^*.csv |
+        #         ^*.pkl
+        #     )
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: 7.0.0
+    hooks:
+    -   id: flake8
+        additional_dependencies:
+            - radon
+            - flake8-docstrings
+
+-   repo: https://github.com/grantjenks/blue
+    rev: v0.9.1
+    hooks:
+    -   id: blue
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "v1.9.0"
+    hooks:
+    -   id: mypy
+        args: [--ignore-missing-imports, --no-strict-optional]
+
+# -   repo:
+#     rev:
+#     hooks:
+#     -   id:
+
+# -   repo:
+#     rev:
+#     hooks:
+#     -   id:
+
+# -   repo:
+#     rev:
+#     hooks:
+#     -   id:
