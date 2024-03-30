@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'{{ cookiecutter.project_name }}'
+project = '{{ cookiecutter.project_name }}'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -172,10 +172,8 @@ htmlhelp_basename = '{{ cookiecutter.repo_name }}doc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',
-
     # The font size ('10pt', '11pt' or '12pt').
     # 'pointsize': '10pt',
-
     # Additional stuff for the LaTeX preamble.
     # 'preamble': '',
 }
@@ -183,10 +181,13 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ('index',
-     '{{ cookiecutter.repo_name }}.tex',
-     u'{{ cookiecutter.project_name }} Documentation',
-     u"{{ cookiecutter.author_name }}", 'manual'),
+    (
+        'index',
+        '{{ cookiecutter.repo_name }}.tex',
+        '{{ cookiecutter.project_name }} Documentation',
+        '{{ cookiecutter.author_name }}',
+        'manual',
+    ),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -215,8 +216,13 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', '{{ cookiecutter.repo_name }}', u'{{ cookiecutter.project_name }} Documentation',
-     [u"{{ cookiecutter.author_name }}"], 1)
+    (
+        'index',
+        '{{ cookiecutter.repo_name }}',
+        '{{ cookiecutter.project_name }} Documentation',
+        ['{{ cookiecutter.author_name }}'],
+        1,
+    )
 ]
 
 # If true, show URL addresses after external links.
@@ -229,9 +235,15 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', '{{ cookiecutter.repo_name }}', u'{{ cookiecutter.project_name }} Documentation',
-     u"{{ cookiecutter.author_name }}", '{{ cookiecutter.project_name }}',
-     '{{ cookiecutter.description }}', 'Miscellaneous'),
+    (
+        'index',
+        '{{ cookiecutter.repo_name }}',
+        '{{ cookiecutter.project_name }} Documentation',
+        '{{ cookiecutter.author_name }}',
+        '{{ cookiecutter.project_name }}',
+        '{{ cookiecutter.description }}',
+        'Miscellaneous',
+    ),
 ]
 
 # Documents to append as an appendix to all manuals.

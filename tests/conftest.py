@@ -7,11 +7,11 @@ from cookiecutter import main
 CCDS_ROOT = Path(__file__).parents[1].resolve()
 
 args = {
-        'project_name': 'DrivenData',
-        'author_name': 'DrivenData',
-        'open_source_license': 'BSD-3-Clause',
-        'python_interpreter': 'python'
-        }
+    'project_name': 'DrivenData',
+    'author_name': 'DrivenData',
+    'open_source_license': 'BSD-3-Clause',
+    'python_interpreter': 'python',
+}
 
 
 def system_check(basename):
@@ -31,17 +31,17 @@ def default_baked_project(tmpdir_factory, request):
         str(CCDS_ROOT),
         no_input=True,
         extra_context=pytest.param,
-        output_dir=out_dir
+        output_dir=out_dir,
     )
 
     pn = pytest.param.get('project_name') or 'project_name'
-    
+
     # project name gets converted to lower case on Linux but not Mac
     pn = system_check(pn)
 
     proj = out_dir / pn
     request.cls.path = proj
-    yield 
+    yield
 
     # cleanup after
     shutil.rmtree(out_dir)
